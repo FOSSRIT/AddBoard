@@ -309,7 +309,7 @@ class TestGame:
 
         cent = rows / 2
         direction = random.randrange(0, 3)
-        modNum = 4
+        modNum = 8
         for i in range(rows):
             for j in range (rows):
                 direction += 1
@@ -317,9 +317,9 @@ class TestGame:
                 if j == cent and i == cent :
                     val = random.randrange(1, (rows / 2))
                 elif direction%modNum == left or direction%modNum == right:
-                    val = (cent - i) + 1
+                    val = abs((cent - i)) + 1
                 elif direction&modNum == up or direction%modNum == down:
-                    val = (cent - j) + 1
+                    val = abs((cent - j)) + 1
                 else: 
                     val = random.randrange(1, (rows / 2))
 
